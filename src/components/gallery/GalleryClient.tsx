@@ -93,10 +93,10 @@ export default function GalleryClient({ projects }: GalleryClientProps) {
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-black/40 transition-opacity duration-300 group-hover:bg-black/60" />
-                  <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                     <PlayCircle className="h-16 w-16" />
-                    <h3 className="mt-2 text-xl font-bold">{project.title}</h3>
-                    <p className="text-sm">{project.category}</p>
+                    <h3 className="mt-4 text-3xl font-bold">{project.title}</h3>
+                    <p className="mt-2 text-base">{project.category}</p>
                   </div>
                 </CardContent>
               </Card>
