@@ -83,8 +83,8 @@ export default function GalleryClient({ projects }: GalleryClientProps) {
               className={index === 0 ? 'sm:col-span-2 sm:row-span-2' : ''}
               onClick={() => openLightbox(project)}
             >
-              <Card className="overflow-hidden group cursor-pointer h-full">
-                <CardContent className="relative flex items-center justify-center p-0 h-full">
+              <Card className="overflow-hidden group cursor-pointer">
+                <CardContent className="relative flex items-center justify-center p-0 aspect-video">
                   <Image
                     src={project.thumbnail_url}
                     alt={project.title}
