@@ -5,6 +5,7 @@ import ReactPlayer from 'react-player/youtube';
 import {
   Dialog,
   DialogContent,
+  DialogTitle,
 } from '@/components/ui/dialog';
 import type { Project } from '@/lib/types';
 
@@ -28,6 +29,7 @@ export default function VideoLightbox({ project, isOpen, onOpenChange }: VideoLi
   return (
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-4xl w-full p-0 bg-black border-0">
+        <DialogTitle className="sr-only">{project.title}</DialogTitle>
         <div className="aspect-video">
           {hasWindow && (
             <ReactPlayer
