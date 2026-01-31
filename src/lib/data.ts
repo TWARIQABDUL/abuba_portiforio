@@ -6,7 +6,7 @@ export async function getLatestProjects(): Promise<Project[]> {
   const { data, error } = await supabase
     .from('projects')
     .select('*')
-    .order('createdAt', { ascending: false })
+    .order('created_at', { ascending: false })
     .limit(3);
 
   if (error) {
@@ -25,7 +25,7 @@ export async function getProjects(): Promise<Project[]> {
   const { data, error } = await supabase
     .from('projects')
     .select('*')
-    .order('createdAt', { ascending: false });
+    .order('created_at', { ascending: false });
 
   if (error) {
     console.error('Error fetching projects:', error);
@@ -40,8 +40,8 @@ export async function getAnalytics() {
     { count: pageViews, error: pageViewsError },
     { count: videoPlays, error: videoPlaysError }
   ] = await Promise.all([
-    supabase.from('analytics_events').select('*', { count: 'exact', head: true }).eq('eventType', 'page_view'),
-    supabase.from('analytics_events').select('*', { count: 'exact', head: true }).eq('eventType', 'video_play')
+    supabase.from('analytics').select('*', { count: 'exact', head: true }).eq('event_name', 'page_view'),
+    supabase.from('analytics').select('*', { count: 'exact', head: true }).eq('event_name', 'video_play')
   ]);
 
   if (pageViewsError) console.error('Error fetching page views:', pageViewsError)

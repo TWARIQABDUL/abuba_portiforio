@@ -53,13 +53,9 @@ export async function addProject(formData: FormData) {
 
   const newProject = {
     title: formData.get('title') as string,
-    description: formData.get('description') as string,
     category: formData.get('category') as string,
-    youtubeUrl: youtubeUrl,
-    thumbnailUrl: `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`,
-    thumbnailWidth: 1280,
-    thumbnailHeight: 720,
-    thumbnailHint: 'youtube video',
+    youtube_url: youtubeUrl,
+    thumbnail_url: `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`,
   }
 
   const { error } = await supabase.from('projects').insert([newProject]);
@@ -88,11 +84,13 @@ export async function deleteProject(id: string) {
 
 export async function logEvent(event: AnalyticsEvent) {
   const supabase = createClient();
-  const { error } = await supabase.from('analytics_events').insert([
+  const { error } = await supabase.from('analytics').insert([
     { 
-      eventType: event.eventType,
-      url: event.url,
-      videoId: event.videoId
+      event_name: event.eventType,
+      metadata: {
+        url: event.url,
+        videoId: event.videoId
+      }
     }
   ]);
   if (error) {

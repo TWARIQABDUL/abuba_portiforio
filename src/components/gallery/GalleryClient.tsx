@@ -86,11 +86,10 @@ export default function GalleryClient({ projects }: GalleryClientProps) {
               <Card className="overflow-hidden group cursor-pointer h-full">
                 <CardContent className="relative flex items-center justify-center p-0 h-full">
                   <Image
-                    src={project.thumbnailUrl}
+                    src={project.thumbnail_url}
                     alt={project.title}
-                    data-ai-hint={project.thumbnailHint}
-                    width={project.thumbnailWidth}
-                    height={project.thumbnailHeight}
+                    data-ai-hint="youtube video"
+                    fill
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-black/40 transition-opacity duration-300 group-hover:bg-black/60" />

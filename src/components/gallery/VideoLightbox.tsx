@@ -31,7 +31,7 @@ export default function VideoLightbox({ project, isOpen, onOpenChange }: VideoLi
         <div className="aspect-video">
           {hasWindow && (
             <ReactPlayer
-              url={project.youtubeUrl}
+              url={project.youtube_url}
               width="100%"
               height="100%"
               controls

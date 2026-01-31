@@ -37,7 +37,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { Textarea } from '../ui/textarea'
 import { addProject, deleteProject, logout } from '@/app/admin/actions'
 import { format } from 'date-fns'
 import { Eye, Play, Trash2, PlusCircle } from 'lucide-react'
@@ -145,10 +144,6 @@ export default function DashboardClient({ projects, analytics, userEmail }: Dash
                                       </SelectContent>
                                     </Select>
                                 </div>
-                                <div className="grid grid-cols-4 items-center gap-4">
-                                    <Label htmlFor="description" className="text-right">Description</Label>
-                                    <Textarea id="description" name="description" className="col-span-3" />
-                                </div>
                                 </div>
                                 <DialogFooter>
                                   <DialogClose asChild>
@@ -179,7 +174,7 @@ export default function DashboardClient({ projects, analytics, userEmail }: Dash
                                 <TableCell className="font-medium">{project.title}</TableCell>
                                 <TableCell>{project.category}</TableCell>
                                 <TableCell className="hidden md:table-cell">
-                                  {format(new Date(project.createdAt), 'MMMM d, yyyy')}
+                                  {format(new Date(project.created_at), 'MMMM d, yyyy')}
                                 </TableCell>
                                 <TableCell>
                                     <form action={() => deleteProject(project.id)}>

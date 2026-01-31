@@ -4,13 +4,9 @@ export type Project = {
   id: string;
   title: string;
   category: ProjectCategory;
-  youtubeUrl: string;
-  thumbnailUrl: string;
-  thumbnailWidth: number;
-  thumbnailHeight: number;
-  thumbnailHint: string;
-  description: string;
-  createdAt: string;
+  youtube_url: string;
+  thumbnail_url: string;
+  created_at: string;
 };
 
 export type AnalyticsEvent = {

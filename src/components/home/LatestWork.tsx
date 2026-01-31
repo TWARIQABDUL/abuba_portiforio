@@ -45,11 +45,10 @@ export default async function LatestWork() {
                     <Card className="overflow-hidden group">
                       <CardContent className="relative flex aspect-video items-center justify-center p-0">
                         <Image
-                          src={project.thumbnailUrl}
+                          src={project.thumbnail_url}
                           alt={project.title}
-                          data-ai-hint={project.thumbnailHint}
-                          width={project.thumbnailWidth}
-                          height={project.thumbnailHeight}
+                          data-ai-hint="youtube video"
+                          fill
                           className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                         />
                         <div className="absolute inset-0 bg-black/30" />
