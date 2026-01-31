@@ -1,5 +1,5 @@
 import { Mail, MapPin, Phone } from 'lucide-react';
-import { Instagram, Youtube, Vimeo } from 'lucide-react';
+import { Instagram, Youtube, Video } from 'lucide-react';
 import Link from 'next/link';
 import ContactForm from '@/components/contact/ContactForm';
 import { Badge } from '@/components/ui/badge';
@@ -58,7 +58,7 @@ export default function ContactPage() {
                 </Button>
                 <Button variant="ghost" size="icon" asChild>
                   <Link href="#" aria-label="Vimeo">
-                    <Vimeo className="h-5 w-5" />
+                    <Video className="h-5 w-5" />
                   </Link>
                 </Button>
               </div>

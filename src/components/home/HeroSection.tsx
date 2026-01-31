@@ -1,8 +1,9 @@
+'use client';
+
 import { motion } from 'framer-motion';
 
 // This is a client component because of framer-motion, but could be a server component if animations were not used.
 // For the purpose of this demo, we'll keep it as a client component to fulfill the animation requirement.
-'use client';
 
 export default function HeroSection() {
   return (

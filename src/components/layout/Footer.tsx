@@ -1,4 +1,4 @@
-import { Instagram, Youtube, Vimeo } from 'lucide-react';
+import { Instagram, Youtube, Video } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
@@ -22,7 +22,7 @@ export default function Footer() {
           </Button>
           <Button variant="ghost" size="icon" asChild>
             <Link href="#" aria-label="Vimeo">
-              <Vimeo className="h-5 w-5" />
+              <Video className="h-5 w-5" />
             </Link>
           </Button>
         </div>
