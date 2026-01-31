@@ -73,7 +73,7 @@ export default function GalleryClient({ projects }: GalleryClientProps) {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
+          className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 grid-flow-row-dense"
         >
           {filteredProjects.map((project, index) => (
             <motion.div
@@ -95,8 +95,8 @@ export default function GalleryClient({ projects }: GalleryClientProps) {
                   <div className="absolute inset-0 bg-black/40 transition-opacity duration-300 group-hover:bg-black/60" />
                   <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                     <PlayCircle className="h-16 w-16" />
-                    <h3 className="mt-4 text-3xl font-bold">{project.title}</h3>
-                    <p className="mt-2 text-base">{project.category}</p>
+                    <h3 className="mt-4 text-4xl font-bold">{project.title}</h3>
+                    <p className="mt-2 text-lg">{project.category}</p>
                   </div>
                 </CardContent>
               </Card>
