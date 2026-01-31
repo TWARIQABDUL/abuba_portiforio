@@ -1,8 +1,7 @@
 import { redirect } from 'next/navigation'
-
 import { createClient } from '@/lib/supabase/server'
-import { Button } from '@/components/ui/button'
-import { logout } from './actions'
+import { getProjects, getAnalytics } from '@/lib/data'
+import DashboardClient from '@/components/admin/Dashboard'
 
 export default async function AdminPage() {
   const supabase = createClient()
@@ -15,13 +14,8 @@ export default async function AdminPage() {
     return redirect('/admin/login')
   }
 
-  return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
-      <h1 className="text-2xl mb-4">Welcome, Admin!</h1>
-      <p className="mb-4">You are logged in as {user.email}.</p>
-      <form>
-        <Button formAction={logout}>Logout</Button>
-      </form>
-    </div>
-  )
+  const projects = await getProjects()
+  const analytics = await getAnalytics()
+
+  return <DashboardClient projects={projects} analytics={analytics} userEmail={user.email ?? ''} />
 }

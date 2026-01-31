@@ -6,6 +6,7 @@ import { ThemeProvider } from '@/components/providers/theme-provider';
 import { Toaster } from '@/components/ui/toaster';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import { EventTracker } from '@/components/analytics/EventTracker';
 
 const fontBody = Inter({
   subsets: ['latin'],
@@ -41,6 +42,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <EventTracker />
           <div className="flex min-h-screen flex-col">
             <Header />
             <main className="flex-grow">{children}</main>

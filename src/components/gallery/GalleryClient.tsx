@@ -9,6 +9,7 @@ import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card, CardContent } from '@/components/ui/card';
 import { PlayCircle } from 'lucide-react';
 import VideoLightbox from './VideoLightbox';
+import { logEvent } from '@/app/admin/actions';
 
 type GalleryClientProps = {
   projects: Project[];
@@ -48,6 +49,7 @@ export default function GalleryClient({ projects }: GalleryClientProps) {
   }, [filter, projects]);
 
   const openLightbox = (project: Project) => {
+    logEvent({ eventType: 'video_play', videoId: project.id });
     setSelectedProject(project);
   };
 

@@ -10,4 +10,11 @@ export type Project = {
   thumbnailHeight: number;
   thumbnailHint: string;
   description: string;
+  createdAt: string;
+};
+
+export type AnalyticsEvent = {
+  eventType: 'page_view' | 'video_play';
+  url?: string;
+  videoId?: string;
 };
