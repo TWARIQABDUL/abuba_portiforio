@@ -12,9 +12,11 @@ import {
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '../ui/button';
+import { createClient } from '@/lib/supabase/server';
 
 export default async function LatestWork() {
-  const latestProjects = await getLatestProjects();
+  const supabase = createClient();
+  const latestProjects = await getLatestProjects(supabase);
 
   return (
     <section className="py-16 sm:py-24 bg-secondary">

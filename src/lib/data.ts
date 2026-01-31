@@ -1,8 +1,7 @@
-import { createClient } from '@/lib/supabase/server';
 import type { Project } from '@/lib/types';
+import type { SupabaseClient } from '@supabase/supabase-js';
 
-export async function getLatestProjects(): Promise<Project[]> {
-  const supabase = createClient();
+export async function getLatestProjects(supabase: SupabaseClient): Promise<Project[]> {
   const { data, error } = await supabase
     .from('projects')
     .select('*')
@@ -16,12 +15,11 @@ export async function getLatestProjects(): Promise<Project[]> {
   return data as Project[];
 };
 
-export async function getAllProjects(): Promise<Project[]> {
-  return getProjects();
+export async function getAllProjects(supabase: SupabaseClient): Promise<Project[]> {
+  return getProjects(supabase);
 };
 
-export async function getProjects(): Promise<Project[]> {
-  const supabase = createClient();
+export async function getProjects(supabase: SupabaseClient): Promise<Project[]> {
   const { data, error } = await supabase
     .from('projects')
     .select('*')
@@ -34,8 +32,7 @@ export async function getProjects(): Promise<Project[]> {
   return data as Project[];
 }
 
-export async function getAnalytics() {
-  const supabase = createClient();
+export async function getAnalytics(supabase: SupabaseClient) {
   const [
     { count: pageViews, error: pageViewsError },
     { count: videoPlays, error: videoPlaysError }

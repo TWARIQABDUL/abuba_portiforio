@@ -14,8 +14,8 @@ export default async function AdminPage() {
     return redirect('/admin/login')
   }
 
-  const projects = await getProjects()
-  const analytics = await getAnalytics()
+  const projects = await getProjects(supabase)
+  const analytics = await getAnalytics(supabase)
 
   return <DashboardClient projects={projects} analytics={analytics} userEmail={user.email ?? ''} />
 }

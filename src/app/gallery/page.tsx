@@ -1,8 +1,10 @@
 import GalleryClient from '@/components/gallery/GalleryClient';
 import { getAllProjects } from '@/lib/data';
+import { createClient } from '@/lib/supabase/server';
 
 export default async function GalleryPage() {
-  const projects = await getAllProjects();
+  const supabase = createClient();
+  const projects = await getAllProjects(supabase);
 
   return (
     <div className="container mx-auto max-w-screen-2xl px-4 py-12 md:py-20">
