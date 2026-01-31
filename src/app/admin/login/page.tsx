@@ -1,6 +1,7 @@
 'use client'
 
 import { useSearchParams } from 'next/navigation'
+import { Suspense } from 'react' // Import Suspense
 import { Button } from '@/components/ui/button'
 import {
   Card,
@@ -13,10 +14,21 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { login } from '../actions'
 
-export default function LoginPage() {
+// 1. Move the search params logic into a sub-component
+function LoginMessage() {
     const searchParams = useSearchParams()
     const message = searchParams.get('message')
+    
+    if (!message) return null;
 
+    return (
+        <div className="text-sm font-medium text-destructive">
+            {message}
+        </div>
+    )
+}
+
+export default function LoginPage() {
   return (
     <div className="flex items-center justify-center min-h-screen bg-secondary">
       <Card className="mx-auto max-w-sm">
@@ -44,11 +56,12 @@ export default function LoginPage() {
               </div>
               <Input id="password" name="password" type="password" required />
             </div>
-            {message && (
-                <div className="text-sm font-medium text-destructive">
-                    {message}
-                </div>
-            )}
+            
+            {/* 2. Wrap the sub-component in Suspense */}
+            <Suspense fallback={null}>
+                <LoginMessage />
+            </Suspense>
+
             <Button formAction={login} type="submit" className="w-full">
               Login
             </Button>
