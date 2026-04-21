@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="border-t">
       <div className="container mx-auto flex flex-col items-center justify-between gap-4 py-6 sm:flex-row">
         <p className="text-sm text-muted-foreground">
-          &copy; {new Date().getFullYear()} Rwanda Visuals. All rights reserved.
+          &copy; {new Date().getFullYear()} Visuals Creeators. All rights reserved.
         </p>
         <div className="flex items-center gap-2">
           <Button variant="ghost" size="icon" asChild>
