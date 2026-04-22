@@ -1,4 +1,4 @@
-# **App Name**: Rwanda Visuals
+# **App Name**: Visual creators
 
 ## Core Features:
 

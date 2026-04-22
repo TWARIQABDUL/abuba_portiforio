@@ -19,7 +19,7 @@ const fontCode = Source_Code_Pro({
 });
 
 export const metadata: Metadata = {
-  title: 'Rwanda Visuals | Cinematic Storytelling',
+  title: 'Visual creators | Cinematic Storytelling',
   description: 'High-end videography portfolio for weddings, commercials, and documentaries based in Kigali, Rwanda.',
 };
 

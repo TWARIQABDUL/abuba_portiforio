@@ -24,7 +24,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           className="font-headline text-4xl font-bold tracking-tight sm:text-6xl md:text-7xl"
         >
-          Rwanda Visuals
+          Visual creators
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}

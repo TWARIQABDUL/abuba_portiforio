@@ -34,7 +34,7 @@ const analyzeAndViewershipPrompt = ai.definePrompt({
   name: 'analyzeAndViewershipPrompt',
   input: {schema: AnalyzeAndViewershipInputSchema},
   output: {schema: AnalyzeAndViewershipOutputSchema},
-  prompt: `You are an analytics expert determining the significance of website events for Rwanda Visuals.
+  prompt: `You are an analytics expert determining the significance of website events for Visual creators.
 
   Based on the event type, URL (if applicable), video title (if applicable), user country, and event timestamp, determine if the event is significant for tracking overall site engagement and identifying popular content.
 
