@@ -21,13 +21,13 @@ export default async function LatestWork() {
   return (
     <section className="py-16 sm:py-24 bg-secondary">
       <div className="container mx-auto max-w-screen-2xl px-4">
-        <div className="flex flex-col items-center justify-between gap-4 text-center md:flex-row md:text-left">
+        <div className="flex flex-col items-center justify-between gap-4 text-center md:flex-row md:text-left md:items-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight md:text-4xl">
             Our Latest Work
           </h2>
-          <Button asChild variant="link" className="text-primary">
+          <Button asChild variant="link" className="text-primary shrink-0">
             <Link href="/gallery">
-              View All Projects <ArrowRight className="ml-2 h-4 w-4" />
+              View All <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
         </div>
