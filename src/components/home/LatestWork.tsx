@@ -38,11 +38,11 @@ export default async function LatestWork() {
               align: 'start',
               loop: true,
             }}
-            className="w-full"
+            className="w-full relative"
           >
-            <CarouselContent>
+            <CarouselContent className="-ml-2 md:-ml-4">
               {latestProjects.map(project => (
-                <CarouselItem key={project.id} className="md:basis-1/2 lg:basis-1/3">
+                <CarouselItem key={project.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
                   <div className="p-1">
                     <Card className="overflow-hidden group">
                       <CardContent className="relative flex aspect-video items-center justify-center p-0">
@@ -64,8 +64,8 @@ export default async function LatestWork() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="hidden sm:flex" />
-            <CarouselNext className="hidden sm:flex" />
+            <CarouselPrevious className="hidden sm:flex -left-4" />
+            <CarouselNext className="hidden sm:flex -right-4" />
           </Carousel>
         </div>
       </div>
