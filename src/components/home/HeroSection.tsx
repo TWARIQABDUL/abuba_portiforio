@@ -10,7 +10,7 @@ export default function HeroSection() {
     <div className="relative h-[calc(100vh-4rem)] w-full overflow-hidden">
       <video
         className="absolute left-0 top-0 h-full w-full object-cover"
-        src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"
+        src="/herovid.mp4"
         autoPlay
         loop
         muted
